@@ -18,8 +18,7 @@ class TestProducts:
 
     def test_product_check_quantity(self, product):
         # TODO напишите проверки на метод check_quantity
-        def test_product_check_quantity(self, product):
-            assert product.check_quantity(500) is True
+        assert product.check_quantity(500) is True
 
     def test_product_buy(self, product):
         # TODO напишите проверки на метод buy
@@ -44,7 +43,7 @@ class TestCart:
     def test_add_product(self, product):
         cart = Cart()
         cart.add_product(product, 3)
-        assert cart.products == {product: 3}  # Проверяем, что продукт добавлен в корзину с правильным количеством
+        assert cart.products == {product: 3}  # Проверяем, что продукт добавлен в корзину
 
     def test_remove_product(self, product):
         cart = Cart()
