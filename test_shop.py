@@ -25,11 +25,11 @@ class TestProducts:
         product.buy(500)  # Покупаем 500 продуктов
         assert product.quantity == 500
 
-def test_product_buy_more_than_available(self, product):
-        # TODO напишите проверки на метод buy,
-        #  которые ожидают ошибку ValueError при попытке купить больше, чем есть в наличии
-        with pytest.raises(ValueError):
-            product.buy(1500) # Пытаемся купить больше, чем есть в наличии, ожидаем ошибку ValueError
+    def test_product_buy_more_than_available(self, product):
+            # TODO напишите проверки на метод buy,
+            #  которые ожидают ошибку ValueError при попытке купить больше, чем есть в наличии
+            with pytest.raises(ValueError):
+                product.buy(1500) # Пытаемся купить больше, чем есть в наличии, ожидаем ошибку ValueError
 
 
 class TestCart:
