@@ -73,3 +73,10 @@ class TestCart:
         cart.add_product(product, 3)
         cart.buy()  # Покупаем продукты из корзины
         assert product.quantity == 997  # Проверяем, что количество продуктов уменьшилось
+
+    def test_remove_product_more_than_available(self, product):
+        cart = Cart()
+        cart.add_product(product, 3)
+        with pytest.raises(ValueError):
+            cart.remove_product(product, 5)  # Пытаемся удалить больше
+        assert cart.products == {product: 3}  # Проверяем что количество не изменилось
