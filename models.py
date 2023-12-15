@@ -68,6 +68,8 @@ class Cart:
             del self.products[product]
         else:
             self.products[product] -= remove_count
+            if self.products[product] <= 0:
+                del self.products[product]
 
     def clear(self):
         self.products = {}
@@ -76,11 +78,7 @@ class Cart:
         return sum(product.price * quantity for product, quantity in self.products.items())
 
     def buy(self):
-        """
-        Метод покупки.
-        Учтите, что товаров может не хватать на складе.
-        В этом случае нужно выбросить исключение ValueError
-        """
+
         for product, quantity in self.products.items():
             if not product.check_quantity(quantity):
                 raise ValueError(f"Not enough quantity available for {product.name}")
